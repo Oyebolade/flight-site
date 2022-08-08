@@ -1,0 +1,36 @@
+{% extends "flight/base.html" %}
+{% block content %} 
+<div class="container">
+    <h3>Flights</h3>
+    <ul>
+            {% for x in queryset %}
+            <li class="flight-item">
+                <a href="{% url 'flight_detail' x.id %}"> Aeroplane: {{x.aeroplane}} | Departure: {{x.departure}} | Destination: {{x.destination}} | Price: {{x.price}} | Departure Time: {{x.departure_datetime}} | Hours Taken: {{x.duration}} <hr><br></a>
+            </li>
+            {% endfor %}
+    </ul>
+</div>
+{% for x in queryset %} 
+<table class="table container" >
+    <thead>
+      <tr>
+        <th scope="col">Aeroplane</th>
+        <th scope="col">Departure</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Price</th>
+        <th scope="col">Departure Time</th>
+        <th scope="col">Hour Spent</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td><a href="">{{x.aeroplane}}</a></td>
+        <td>{{x.departure}}</td>
+        <td>{{x.destination}}</td>
+        <td>{{x.price}}</td>
+        <td>{{x.departure_datetime}}</td>
+        <td>{{x.duration}}</td>
+      </tr>
+  </table>
+{% endfor %}
+{% endblock %}

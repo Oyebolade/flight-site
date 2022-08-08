@@ -1,0 +1,52 @@
+{% extends "flight/base.html" %}
+
+{% block head %}
+<title> Home | Flight</title>
+{% endblock %}
+
+{% block content %} 
+
+<main role="main" class="">
+    <div class="p-5 mb-4 d-flex" style="background-image: url('/static/assests/images/p2.jpg');">
+      <div class="container-fluid py-5">
+          <h1 class="display-5 col-md-8 fw-bold text-light">Life is Short And The World is Wide!</h1>
+          <p class="col-md-6 text-light">To get the best of your adventure you just need to leave and go where you like, we are waiting for you.</p>
+          <button class="btn btn-warning btn-lg" type="button">Learn More</button>
+      </div>
+      <div class="col-md-4 bg-dark p-5">
+        <form method="GET" action="{% url 'search_result' %}" class="">
+          <div class="form-floating mb-3">
+            <select name="Departure" class="form-select" aria-label="Default select example" required>
+              <option selected>Departure</option>
+              <option value="gaya">Gaya Airport</option>
+              <option value="albany">Albany International Airport</option>
+              <option value="murtala">Murtala Muhammed International Airport</option>
+              <option value="nnamdi">Nnamdi Azikiwe International Airport</option>
+              <option value="batna">Batna Airport</option>
+            </select>
+          </div>
+          <div class="form-floating mb-3">
+            <select name="Destination" class="form-select" aria-label="Default select example" required>
+              <option selected>Destination</option>
+              <option value="diori">Diori Hamani International Airport</option>
+              <option value="murtala">Murtala Muhammed International Airport</option>
+              <option value="ho">Ho Airport</option>
+              <option value="palese">Palese Airport</option>
+              <option value="albany">Albany International Airport</option>
+            </select>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="date" class="form-control rounded-3" name="Departure_date" id="floatingPassword" placeholder="Departure Date" required>
+            <label for="floatingPassword">Departure Date</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="date" class="form-control rounded-3" name="Destination_date" id="floatingPassword" placeholder="Destination Date" required>
+            <label for="floatingPassword">Destination Date</label>
+          </div>
+          <button class=" mb-2 btn btn-lg rounded-3 btn-warning" type="submit">Search Flight</button>
+        </form>
+      </div>
+    </div>
+  </main>
+    
+{% endblock %}
